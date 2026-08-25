@@ -75,6 +75,8 @@ export interface Dictionary {
     whatsappCta: string;
     callCta: string;
     emailCta: string;
+    mobileLabel: string;
+    getDirections: string;
   };
   common: {
     languageSwitchLabel: string;
@@ -83,7 +85,6 @@ export interface Dictionary {
     facebookLabel: string;
   };
   chat: {
-    greeting: string;
-    close: string;
+    messengerCta: string;
   };
 }

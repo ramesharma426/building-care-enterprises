@@ -19,7 +19,7 @@ It sets, per page:
 
 `src/lib/structuredData.ts`:
 
-- **`localBusinessJsonLd(locale, dict)`** — a schema.org `HardwareStore` (a `LocalBusiness` subtype) entity: name, description, phone, email, address, `sameAs` (currently just the Facebook page — add a Google Business Profile URL to the same array once that exists), and (once filled in) geo coordinates. Rendered on **every** page via `src/components/SiteBody.tsx`, so any page a crawler lands on can identify the business.
+- **`localBusinessJsonLd(locale, dict)`** — a schema.org `HardwareStore` (a `LocalBusiness` subtype) entity: name, description, two phone numbers, email, address, `geo` + `hasMap` (from the owner-provided Google Maps place), and `sameAs` (currently just the Facebook page — add a Google Business Profile URL to the same array once that exists). Rendered on **every** page via `src/components/SiteBody.tsx`, so any page a crawler lands on can identify the business.
 - **`breadcrumbJsonLd(items)`** — a `BreadcrumbList`, used on category pages (`src/views/CategoryView.tsx`) for the Home → Products → Category trail. Add this to any future page with real hierarchy depth.
 
 Validate changes to either with [Google's Rich Results Test](https://search.google.com/test/rich-results) before shipping — malformed JSON-LD fails silently (Google just ignores it) rather than erroring visibly.
@@ -37,7 +37,7 @@ Validate changes to either with [Google's Rich Results Test](https://search.goog
 
 ## Images
 
-No `next/image` optimizer at runtime (static export — see [architecture.md](./architecture.md)), so `images.unoptimized: true` is set in `next.config.ts`. The favicon (`app/icon.tsx`), Apple touch icon (`app/apple-icon.tsx`), and social share image (`app/opengraph-image.tsx`) are all generated at *build* time via [`next/og`'s `ImageResponse`](https://nextjs.org/docs/app/api-reference/functions/image-response) rather than static image files — see [content-editing.md](./content-editing.md#logo-and-photos) for how to replace them once a real logo exists. Each of these route files needs `export const dynamic = "force-static"` — without it, `next build` fails under `output: "export"` (Next needs to know upfront the route has no per-request variation).
+No `next/image` optimizer at runtime (static export — see [architecture.md](./architecture.md)), so `images.unoptimized: true` is set in `next.config.ts`. The favicon (`app/icon.png`) and Apple touch icon (`app/apple-icon.png`) are real image files (the shop's actual logo, cropped and background-removed — see [content-editing.md](./content-editing.md#logo-and-photos)); the social share image (`app/opengraph-image.tsx`) is still generated at *build* time via [`next/og`'s `ImageResponse`](https://nextjs.org/docs/app/api-reference/functions/image-response) and needs a real design. That route (and `robots.ts`/`sitemap.ts`/`manifest.ts`) needs `export const dynamic = "force-static"` — without it, `next build` fails under `output: "export"` (Next needs to know upfront the route has no per-request variation).
 
 ## AI answer engines (llms.txt)
 
@@ -45,6 +45,6 @@ Separately from search-engine SEO, `public/llms.txt` describes the business in p
 
 ## What's deliberately not done yet
 
-- No `geo` coordinates or opening hours in the LocalBusiness schema — see [content-editing.md](./content-editing.md#business-facts-nap-registration-categories) for why, and what to fill in once known.
+- No opening hours in the LocalBusiness schema (`geo` coordinates are now filled in) — see [content-editing.md](./content-editing.md#business-facts-nap-registration-categories) for what to fill in once hours are known.
 - No Google Business Profile `sameAs` link yet (Facebook is already wired in) — add once that profile is created; this matters more for local pack ranking than the website itself does.
 - No per-product structured data (`Product`/`Offer` schema) — there's no priced catalog yet to describe; add this alongside the real product data model mentioned in [content-editing.md](./content-editing.md#adding-real-products).

@@ -10,7 +10,7 @@ const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"]
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: `${SITE_NAME} | Hardware, Sanitary, Electrical & More in Hetauda`,
+    default: `${SITE_NAME} | Building Materials, Sanitary & Machinery Tools in Hetauda`,
     template: `%s | ${SITE_NAME}`,
   },
   ...(GOOGLE_SITE_VERIFICATION

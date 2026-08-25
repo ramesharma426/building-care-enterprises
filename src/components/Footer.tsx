@@ -1,11 +1,12 @@
 import Link from "next/link";
-import { Mail, MapPin, MessageCircle, Phone } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
 import type { Locale } from "@/lib/site";
 import type { Dictionary } from "@/dictionaries/types";
 import { business, categorySlugs } from "@/data/business";
 import { localeHref } from "@/lib/paths";
 import { Container } from "./Container";
 import { FacebookIcon } from "./FacebookIcon";
+import { WhatsAppIcon } from "./WhatsAppIcon";
 
 export function Footer({ locale, dict }: { locale: Locale; dict: Dictionary }) {
   const year = new Date().getFullYear();
@@ -71,14 +72,25 @@ export function Footer({ locale, dict }: { locale: Locale; dict: Dictionary }) {
           <ul className="mt-3 space-y-3 text-sm">
             <li className="flex items-start gap-2">
               <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-brand-300" aria-hidden />
-              <span>
-                {business.address.line1}, {business.address.city}, {business.address.district}
-              </span>
+              <a
+                href={business.googleMapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-white"
+              >
+                {/* line1 already includes the city ("Hetauda - 2, ..."), so
+                    only append district here to avoid "Hetauda, Hetauda". */}
+                {business.address.line1}, {business.address.district}
+              </a>
             </li>
             <li className="flex items-center gap-2">
               <Phone className="h-4 w-4 shrink-0 text-brand-300" aria-hidden />
               <a href={`tel:${business.phoneE164}`} className="hover:text-white">
                 {business.phoneDisplay}
+              </a>
+              <span aria-hidden>/</span>
+              <a href={`tel:${business.mobilePhoneE164}`} className="hover:text-white">
+                {business.mobilePhoneDisplay}
               </a>
             </li>
             <li className="flex items-center gap-2">
@@ -106,7 +118,7 @@ export function Footer({ locale, dict }: { locale: Locale; dict: Dictionary }) {
               aria-label={dict.nav.whatsapp}
               className="text-brand-200 hover:text-white"
             >
-              <MessageCircle className="h-5 w-5" />
+              <WhatsAppIcon className="h-5 w-5" />
             </a>
           </div>
         </div>

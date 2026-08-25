@@ -1,11 +1,9 @@
-import { Car, Cpu, Droplets, Sofa, Wrench, Zap, type LucideIcon } from "lucide-react";
+import { Blocks, Cog, Droplets, Fan, type LucideIcon } from "lucide-react";
 import type { CategorySlug } from "@/data/business";
 
 export const categoryIcons: Record<CategorySlug, LucideIcon> = {
-  "hardware-tools": Wrench,
+  "building-materials": Blocks,
   "sanitary-plumbing": Droplets,
-  electrical: Zap,
-  "motor-parts": Car,
-  furniture: Sofa,
-  electronics: Cpu,
+  "machinery-tools": Cog,
+  appliances: Fan,
 };

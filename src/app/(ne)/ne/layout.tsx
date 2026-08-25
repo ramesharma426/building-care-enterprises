@@ -10,7 +10,7 @@ const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"]
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: `${SITE_NAME} | हेटौँडामा हार्डवेयर, स्यानिटरी, इलेक्ट्रिकल तथा थप सामग्री`,
+    default: `${SITE_NAME} | हेटौँडामा निर्माण सामग्री, स्यानिटरी तथा मेसिनरी औजार`,
     template: `%s | ${SITE_NAME}`,
   },
   ...(GOOGLE_SITE_VERIFICATION

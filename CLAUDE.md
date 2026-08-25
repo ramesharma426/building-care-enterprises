@@ -2,7 +2,7 @@
 
 # Building Care Enterprises — website
 
-Static (`output: "export"`), bilingual (English + Nepali) Next.js site for a hardware/sanitary/electrical/motor-parts/furniture/electronics shop in Hetauda, Nepal. Deployed to GitHub Pages at `buildingcare.com.np`.
+Static (`output: "export"`), bilingual (English + Nepali) Next.js site for a building-materials/sanitary-plumbing/machinery-tools/appliances shop in Hetauda, Nepal. Deployed to GitHub Pages at `buildingcare.com.np`.
 
 **Read [docs/README.md](./docs/README.md) first** — it indexes one doc per concern (architecture, i18n, SEO, content editing, design system, components, deployment). Each is written to be read on its own; don't guess at how something works when a doc already explains it.
 

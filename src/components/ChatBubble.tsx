@@ -1,102 +1,44 @@
-"use client";
-
-import { useEffect, useState } from "react";
-import { MessageCircle, X } from "lucide-react";
 import { business } from "@/data/business";
+import { WhatsAppIcon } from "./WhatsAppIcon";
+import { MessengerIcon } from "./MessengerIcon";
 
-const DISMISS_KEY = "bc-chat-dismissed";
-const SHOW_DELAY_MS = 2000;
-// Below this width the greeting popup is skipped entirely (see comment in
-// the effect below) — matches Tailwind's `sm` breakpoint.
-const MIN_WIDTH_FOR_GREETING = 640;
-
-/** Floating WhatsApp chat bubble: icon button plus a one-time greeting
- * popup. No API/token involved — it's a plain `wa.me` deep link, same as
- * the button always was. The greeting auto-shows once per browser tab
- * (sessionStorage) rather than on every page — but only on screens wide
- * enough to fit it without covering page content, since on a phone-height
- * viewport the popup's ~230px footprint reliably overlapped whatever was at
- * the bottom of the current page (contact details, category lists, etc.) —
- * confirmed visually while building this. Below that width the button stays
- * a plain, always-tappable WhatsApp link with no auto-popup, same pattern
- * most mobile sites use for this. */
+/** Two separate floating buttons, bottom-right, stacked vertically, on
+ * every page — WhatsApp and Messenger. Each is its own direct link, opened
+ * in a new tab so the site stays open behind it. No shared toggle/expand
+ * state, no API, token, or backend involved for either — plain `wa.me` /
+ * `m.me` deep links. Server component (no interactivity needed). */
 export function ChatBubble({
-  greeting,
-  closeLabel,
-  ctaLabel,
-  buttonLabel,
+  whatsappLabel,
+  messengerLabel,
 }: {
-  greeting: string;
-  closeLabel: string;
-  ctaLabel: string;
-  buttonLabel: string;
+  whatsappLabel: string;
+  messengerLabel: string;
 }) {
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    if (window.matchMedia(`(max-width: ${MIN_WIDTH_FOR_GREETING - 1}px)`).matches) {
-      return;
-    }
-
-    let dismissed = false;
-    try {
-      dismissed = sessionStorage.getItem(DISMISS_KEY) === "1";
-    } catch {
-      // sessionStorage unavailable (privacy mode, etc.) — just show it.
-    }
-    if (dismissed) return;
-
-    const timer = setTimeout(() => setVisible(true), SHOW_DELAY_MS);
-    return () => clearTimeout(timer);
-  }, []);
-
-  function dismiss() {
-    setVisible(false);
-    try {
-      sessionStorage.setItem(DISMISS_KEY, "1");
-    } catch {
-      // ignore
-    }
-  }
-
-  const href = `https://wa.me/${business.whatsappNumber}`;
+  const whatsappHref = `https://wa.me/${business.whatsappNumber}`;
 
   return (
     <div
       className="fixed right-4 z-40 flex flex-col items-end gap-3 sm:right-5"
       style={{ bottom: "calc(1.25rem + env(safe-area-inset-bottom))" }}
     >
-      {visible && (
-        <div className="relative max-w-[260px] rounded-2xl rounded-br-sm bg-white p-4 text-sm leading-relaxed text-slate-700 shadow-xl ring-1 ring-slate-200">
-          <button
-            type="button"
-            onClick={dismiss}
-            aria-label={closeLabel}
-            className="absolute -top-2.5 -right-2.5 inline-flex h-8 w-8 items-center justify-center rounded-full bg-slate-700 text-white shadow hover:bg-slate-900"
-          >
-            <X className="h-4 w-4" aria-hidden />
-          </button>
-          <p>{greeting}</p>
-          <a
-            href={href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-[#25D366] hover:underline"
-          >
-            <MessageCircle className="h-4 w-4" aria-hidden />
-            {ctaLabel}
-          </a>
-        </div>
-      )}
-
       <a
-        href={href}
+        href={business.messengerUrl}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label={buttonLabel}
-        className="inline-flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg transition-transform hover:scale-105"
+        aria-label={messengerLabel}
+        className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-[#0084FF] text-white shadow-lg transition-transform hover:scale-105"
       >
-        <MessageCircle className="h-7 w-7" aria-hidden />
+        <MessengerIcon className="h-6 w-6" />
+      </a>
+
+      <a
+        href={whatsappHref}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={whatsappLabel}
+        className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg transition-transform hover:scale-105"
+      >
+        <WhatsAppIcon className="h-6 w-6" />
       </a>
     </div>
   );

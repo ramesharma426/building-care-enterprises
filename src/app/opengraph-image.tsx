@@ -40,8 +40,8 @@ export default function OpengraphImage() {
         <div style={{ display: "flex", fontSize: 64, fontWeight: 800, color: "#ffffff" }}>
           Building Care Enterprises
         </div>
-        <div style={{ display: "flex", fontSize: 30, color: "#e0f2fe", marginTop: 20 }}>
-          Hardware · Sanitary · Electrical · Motor Parts · Furniture · Electronics
+        <div style={{ display: "flex", fontSize: 28, color: "#e0f2fe", marginTop: 20 }}>
+          Building Materials · Sanitary & Plumbing · Machinery Tools · Appliances
         </div>
         <div style={{ display: "flex", fontSize: 26, color: "#bae6fd", marginTop: 12 }}>
           Hetauda, Makawanpur, Nepal

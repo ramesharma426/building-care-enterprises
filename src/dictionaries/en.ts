@@ -4,24 +4,24 @@ export const en = {
   meta: {
     home: {
       title:
-        "Building Care Enterprises | Hardware, Sanitary, Electrical & More in Hetauda",
+        "Building Care Enterprises | Building Materials, Sanitary & Machinery Tools in Hetauda",
       description:
-        "Building Care Enterprises is a Hetauda-based supplier of hardware, sanitary, electrical, motor vehicle spare parts, furniture, and electronics for homes, contractors, and businesses in Makawanpur, Nepal.",
+        "Building Care Enterprises is a Hetauda-based supplier of building materials, sanitary & plumbing goods, machinery tools, and appliances for homes, contractors, and businesses in Makawanpur, Nepal.",
     },
     about: {
       title: "About Us | Building Care Enterprises, Hetauda",
       description:
-        "Learn about Building Care Enterprises, a registered hardware and building supplies firm based in Ward No. 7, Kamane, Hetauda, Makawanpur, Nepal.",
+        "Learn about Building Care Enterprises, a registered building supplies firm based in Hetauda - 2, Kantirajpath, Makawanpur, Nepal.",
     },
     products: {
       title: "Products | Building Care Enterprises",
       description:
-        "Browse hardware, sanitary, electrical, motor vehicle spare parts, furniture, and electronics categories supplied by Building Care Enterprises in Hetauda, Nepal.",
+        "Browse building materials, sanitary & plumbing, machinery tools, and appliances categories supplied by Building Care Enterprises in Hetauda, Nepal.",
     },
     contact: {
       title: "Contact Us | Building Care Enterprises",
       description:
-        "Call, WhatsApp, or visit Building Care Enterprises at Ward No. 7, Kamane, Hetauda, Makawanpur. Phone: 985-5039839.",
+        "Call, WhatsApp, or visit Building Care Enterprises at Hetauda - 2, Kantirajpath, Makawanpur. Phone: 057-524865 / 985-5039839.",
     },
   },
   nav: {
@@ -43,23 +43,23 @@ export const en = {
     heroEyebrow: "Hetauda, Makawanpur",
     heroTitle: "Everything Your Building Needs, Under One Roof",
     heroSubtitle:
-      "Building Care Enterprises supplies hardware, sanitary, electrical, motor vehicle spare parts, furniture, and electronics to homes, contractors, and businesses across Hetauda and Makawanpur.",
+      "Building Care Enterprises supplies building materials, sanitary & plumbing goods, machinery tools, and appliances to homes, contractors, and businesses across Hetauda and Makawanpur.",
     heroCtaPrimary: "Browse Products",
     heroCtaSecondary: "Get in Touch",
     trustBar: [
       "Trusted Local Supplier",
-      "6 Product Categories",
+      "4 Product Categories",
       "Serving Hetauda & Makawanpur",
       "Registered Nepali Firm",
     ],
     categoriesHeading: "What We Supply",
     categoriesSubheading:
-      "From hand tools to home electronics — six categories, one trusted shop.",
+      "From building materials to machinery and appliances — four categories, one trusted shop.",
     whyHeading: "Why Choose Building Care Enterprises",
     whyItems: [
       {
         title: "Wide Product Range",
-        desc: "Hardware, sanitary, electrical, motor parts, furniture, and electronics — fewer stops, less hassle.",
+        desc: "Building materials, sanitary & plumbing goods, machinery tools, and appliances — fewer stops, less hassle.",
       },
       {
         title: "Local & Reliable",
@@ -72,16 +72,16 @@ export const en = {
     ],
     ctaHeading: "Need Something for Your Next Project?",
     ctaSubheading:
-      "Call, WhatsApp, or visit us in Kamane, Hetauda — we're happy to help you find what you need.",
+      "Call, WhatsApp, or visit us in Kantirajpath, Hetauda — we're happy to help you find what you need.",
     ctaButton: "Contact Us",
   },
   about: {
     title: "About Building Care Enterprises",
     intro:
-      "A Hetauda-based supplier of hardware, sanitary, electrical, motor vehicle spare parts, furniture, and electronic goods.",
+      "A Hetauda-based supplier of building materials, sanitary & plumbing goods, machinery tools, and appliances.",
     storyHeading: "Our Story",
     storyBody: [
-      "Building Care Enterprises is a private firm based in Ward No. 7, Kamane, Hetauda, in Makawanpur district. We trade in hardware, sanitary fittings, electrical goods, motor vehicle spare parts, furniture, and electronics — supplying households, contractors, and businesses across Hetauda and the wider Makawanpur area.",
+      "Building Care Enterprises is a private firm based in Hetauda - 2, Kantirajpath, in Makawanpur district. We trade in building materials — including cement, steel rod, paints, roofing sheets, aluminium wire mesh, marble, tiles and ready-made doors — along with sanitary and plumbing goods, machinery tools, and appliances, supplying households, contractors, and businesses across Hetauda and the wider Makawanpur area.",
       "Our aim is simple: bring together the everyday materials that keep homes and buildings running, in one dependable local shop, backed by people who know the products and the area.",
     ],
     proprietorHeading: "Proprietor",
@@ -110,77 +110,62 @@ export const en = {
   products: {
     title: "Our Products",
     intro:
-      "We supply six major categories of building and household goods. A full catalogue with prices is coming soon — call or WhatsApp us in the meantime for stock and pricing.",
+      "We supply four major categories of building and household goods. A full catalogue with prices is coming soon — call or WhatsApp us in the meantime for stock and pricing.",
     viewCategory: "View Category",
     comingSoonNote: "Full product catalogue coming soon",
   },
   categories: {
-    "hardware-tools": {
-      name: "Hardware & Tools",
+    "building-materials": {
+      name: "Building Materials",
       shortDescription:
-        "Hand tools, power tools, fasteners, and general hardware for building and repair work.",
+        "Cement, steel rod, paints, roofing sheets, wire mesh, marble & tiles, and ready-made doors for construction and repair work.",
       longDescription:
-        "From everyday hand tools to fasteners, fittings, and general hardware supplies, we stock the essentials that contractors and households reach for on every project.",
+        "We supply core construction materials — cement (OPC, PPC & PSC), steel rod, a wide range of paints and primers, plain and coloured roofing sheets, aluminium wire mesh, marble, tiles and granite, and ready-made doors — for new builds, renovations, and repair work across Hetauda and Makawanpur.",
       highlights: [
-        "Hand & power tools",
-        "Nuts, bolts & fasteners",
-        "General hardware supplies",
+        "Cement (OPC/PPC/PSC) & steel rod",
+        "Paints, primers & enamels",
+        "Roofing sheets & aluminium wire mesh",
+        "Marble, tiles & granite",
+        "Ready-made doors",
+        "Adhesives, sealants & waterproofing compounds",
       ],
     },
     "sanitary-plumbing": {
       name: "Sanitary & Plumbing",
       shortDescription:
-        "Bathroom fittings, pipes, and plumbing accessories for new construction and repairs.",
+        "Toilets, wash basins, pipes, and plumbing accessories for new construction and repairs.",
       longDescription:
-        "We supply sanitary ware and plumbing accessories for bathrooms, kitchens, and utility areas — for new builds as well as repairs and upgrades.",
+        "We supply sanitary ware and plumbing accessories — including toilets, wash basins, and PVC, CPVC & HDPE pipes and fittings — for bathrooms, kitchens, and utility areas, for new builds as well as repairs and upgrades.",
       highlights: [
-        "Bathroom & sanitary fittings",
-        "Pipes & plumbing accessories",
+        "Toilets, wash basins & sanitary fittings",
+        "PVC, CPVC & HDPE pipes and fittings",
         "Fixtures for kitchens & utility areas",
       ],
     },
-    electrical: {
-      name: "Electrical Goods",
+    "machinery-tools": {
+      name: "Machinery Tools",
       shortDescription:
-        "Wiring, switches, fittings, and electrical accessories for homes and buildings.",
+        "Power tools, cutting & grinding machines, and water pumps for construction, repair, and workshop use.",
       longDescription:
-        "Wiring accessories, switches, fittings, and other electrical goods needed to wire, maintain, or upgrade a home or building.",
+        "We supply machinery and tools for construction sites, workshops, and everyday repair work — including power tools, cutting and grinding machines, and water pumps — serving local contractors and individual buyers around Hetauda.",
       highlights: [
-        "Switches & wiring accessories",
-        "Electrical fittings",
-        "Accessories for homes & buildings",
+        "Power tools & cutting/grinding machines",
+        "Water pumps",
+        "Hand tools & grinding/cutting discs",
       ],
     },
-    "motor-parts": {
-      name: "Motor Vehicle Spare Parts",
-      shortDescription: "Spare parts and accessories for motor vehicles.",
+    appliances: {
+      name: "Appliances",
+      shortDescription: "Air coolers, kitchen chimneys, and other home appliances.",
       longDescription:
-        "A range of spare parts and accessories for motor vehicles, serving local workshops and vehicle owners around Hetauda.",
-      highlights: ["Vehicle spare parts", "Accessories", "Support for local workshops"],
-    },
-    furniture: {
-      name: "Furniture",
-      shortDescription: "Furniture for the home, office, and commercial spaces.",
-      longDescription:
-        "Furniture pieces for home, office, and commercial use, sourced to suit everyday household and business needs.",
-      highlights: ["Home furniture", "Office furniture", "Commercial furnishings"],
-    },
-    electronics: {
-      name: "Electronics",
-      shortDescription: "Everyday electronic goods for the home and office.",
-      longDescription:
-        "A selection of everyday electronic goods for household and office use.",
-      highlights: [
-        "Household electronics",
-        "Office electronics",
-        "Everyday appliances",
-      ],
+        "We stock a selection of home appliances — including air coolers and kitchen chimneys — for households and businesses across Hetauda and Makawanpur.",
+      highlights: ["Air coolers", "Kitchen chimneys", "Other home appliances"],
     },
   },
   contact: {
     title: "Contact Us",
     intro:
-      "Have a question about stock, pricing, or an order? Reach out — we're based in Kamane, Hetauda and happy to help.",
+      "Have a question about stock, pricing, or an order? Reach out — we're based in Kantirajpath, Hetauda and happy to help.",
     addressHeading: "Address",
     phoneHeading: "Phone",
     emailHeading: "Email",
@@ -191,6 +176,8 @@ export const en = {
     whatsappCta: "Chat on WhatsApp",
     callCta: "Call Now",
     emailCta: "Send an Email",
+    mobileLabel: "Mobile",
+    getDirections: "Get Directions",
   },
   common: {
     languageSwitchLabel: "नेपाली",
@@ -199,7 +186,6 @@ export const en = {
     facebookLabel: "Facebook",
   },
   chat: {
-    greeting: "Hi! Need help finding something? Chat with us on WhatsApp.",
-    close: "Close",
+    messengerCta: "Chat on Messenger",
   },
 } satisfies Dictionary;

@@ -5,8 +5,8 @@ import type { Dictionary } from "@/dictionaries/types";
 
 /** schema.org LocalBusiness (HardwareStore) entity — included on every page
  * so any page a crawler lands on can identify the business. See
- * docs/seo.md#local-business-schema for what to fill in once available
- * (geo coordinates, opening hours, Google Business Profile URL). */
+ * docs/seo.md#local-business-schema for what's still missing (opening
+ * hours, Google Business Profile URL) and where geo/hasMap came from. */
 export function localBusinessJsonLd(locale: Locale, dict: Dictionary) {
   return {
     "@context": "https://schema.org",
@@ -15,7 +15,7 @@ export function localBusinessJsonLd(locale: Locale, dict: Dictionary) {
     name: business.legalName,
     description: dict.meta.home.description,
     url: SITE_URL,
-    telephone: business.phoneE164,
+    telephone: [business.phoneE164, business.mobilePhoneE164],
     email: business.email,
     priceRange: "$$",
     inLanguage: locale,
@@ -27,6 +27,7 @@ export function localBusinessJsonLd(locale: Locale, dict: Dictionary) {
       postalCode: business.address.postalCode,
       addressCountry: business.address.countryCode,
     },
+    hasMap: business.googleMapsUrl,
     // Add a Google Business Profile URL here too once that's created.
     sameAs: [business.facebookUrl],
     ...(business.geo

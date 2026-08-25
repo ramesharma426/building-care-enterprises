@@ -1,13 +1,19 @@
-import { Mail, MapPin, MessageCircle, Phone } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
 import type { Locale } from "@/lib/site";
 import { getDictionary } from "@/lib/dictionary";
 import { business } from "@/data/business";
 import { Container } from "@/components/Container";
 import { PageHero } from "@/components/PageHero";
 import { FacebookIcon } from "@/components/FacebookIcon";
+import { WhatsAppIcon } from "@/components/WhatsAppIcon";
 
-const MAP_QUERY = `Building Care Enterprises, ${business.address.line1}, ${business.address.city}, ${business.address.district}, Nepal`;
-const MAP_SRC = `https://www.google.com/maps?q=${encodeURIComponent(MAP_QUERY)}&output=embed`;
+// Precise pin (business.geo), not a text-address geocode — see the comment
+// on `geo` in src/data/business.ts for where these coordinates came from.
+const MAP_SRC = business.geo
+  ? `https://www.google.com/maps?q=${business.geo.lat},${business.geo.lng}&z=17&output=embed`
+  : `https://www.google.com/maps?q=${encodeURIComponent(
+      `Building Care Enterprises, ${business.address.line1}, ${business.address.city}, ${business.address.district}, Nepal`,
+    )}&output=embed`;
 
 export function ContactView({ locale }: { locale: Locale }) {
   const dict = getDictionary(locale);
@@ -27,13 +33,20 @@ export function ContactView({ locale }: { locale: Locale }) {
                   {contact.addressHeading}
                 </p>
               </div>
-              <p className="mt-2 text-slate-700">
+              <a
+                href={business.googleMapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-2 block text-slate-700 hover:text-brand-700"
+              >
+                {/* line1 already includes the city ("Hetauda - 2, ..."), so
+                    only district/country follow here. */}
                 {business.address.line1}
                 <br />
-                {business.address.city}, {business.address.district}
+                {business.address.district}
                 <br />
                 {business.address.country}
-              </p>
+              </a>
             </div>
 
             <div className="rounded-2xl border border-slate-200 p-5">
@@ -48,6 +61,12 @@ export function ContactView({ locale }: { locale: Locale }) {
                 className="mt-2 block text-lg font-semibold text-slate-900 hover:text-brand-700"
               >
                 {business.phoneDisplay}
+              </a>
+              <a
+                href={`tel:${business.mobilePhoneE164}`}
+                className="mt-1 block text-sm font-medium text-slate-600 hover:text-brand-700"
+              >
+                {contact.mobileLabel}: {business.mobilePhoneDisplay}
               </a>
             </div>
 
@@ -80,7 +99,7 @@ export function ContactView({ locale }: { locale: Locale }) {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full bg-[#25D366] px-5 py-2.5 text-sm font-semibold text-white hover:opacity-90"
               >
-                <MessageCircle className="h-4 w-4" aria-hidden />
+                <WhatsAppIcon className="h-4 w-4" aria-hidden />
                 {contact.whatsappCta}
               </a>
               <a
@@ -110,9 +129,19 @@ export function ContactView({ locale }: { locale: Locale }) {
           </div>
 
           <div className="lg:col-span-3">
-            <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-brand-700">
-              {contact.mapHeading}
-            </p>
+            <div className="mb-3 flex items-center justify-between gap-3">
+              <p className="text-sm font-semibold uppercase tracking-wide text-brand-700">
+                {contact.mapHeading}
+              </p>
+              <a
+                href={business.googleMapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm font-semibold text-brand-700 hover:underline"
+              >
+                {contact.getDirections}
+              </a>
+            </div>
             <div className="overflow-hidden rounded-2xl border border-slate-200">
               <iframe
                 title={contact.mapHeading}
