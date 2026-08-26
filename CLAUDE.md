@@ -8,4 +8,4 @@ Static (`output: "export"`), bilingual (English + Nepali) Next.js site for a bui
 
 Fast orientation if you only read one thing: this app renders every page twice — once at `/...` (English) and once at `/ne/...` (Nepali) — via two separate root layouts (a route-group pattern, not Next's usual `[lang]` convention). See [docs/architecture.md](./docs/architecture.md) for why, before assuming the more common pattern applies here.
 
-The product catalog is placeholder/category-level only — no real product list existed when this was built. See [docs/content-editing.md](./docs/content-editing.md) before treating any product copy as final.
+The product catalog is category-level placeholder copy for two categories (`sanitary-plumbing`, `appliances`), but `building-materials` and `machinery-tools` now have a real itemized stock list wired in (`src/data/products.ts`, rendered on each category page). See [docs/content-editing.md](./docs/content-editing.md) before treating any product copy as final.

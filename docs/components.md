@@ -14,6 +14,7 @@ All in `src/components/`. Rule of thumb used throughout: **server components by 
 | `Container.tsx` | Server | Max-width + padding wrapper — see [design-system.md](./design-system.md#layout). |
 | `PageHero.tsx` | Server | The brand-tinted title+intro banner used at the top of About/Products/Contact (not the home page, which has its own bespoke hero in `HomeView`). |
 | `CategoryCard.tsx` | Server | The clickable category tile (icon, name, short description, "view category" link) used on both the home page's category grid and the full Products page. |
+| `ProductItemList.tsx` | Server | Renders `productGroups[slug]` (from `src/data/products.ts`) as a native `<details>`/`<summary>` accordion, one per group, each item showing its name and size/variant. No client JS. Used on `CategoryView.tsx`; see [content-editing.md](./content-editing.md#itemized-stock-lists-per-category). |
 | `JsonLd.tsx` | Server | Generic `<script type="application/ld+json">` renderer. Escapes `<` in the serialized JSON to prevent `</script>` breakout — always pass it plain server-built objects, never unescaped user input (not a concern today since there's no user input anywhere on the site, but keep it that way if a form is ever added). |
 
 ## Views vs. components

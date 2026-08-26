@@ -21,7 +21,17 @@ One field is still deliberately left blank rather than guessed:
 The category list (`building-materials`, `sanitary-plumbing`, `machinery-tools`, `appliances`) reflects the shop's actual stock — confirmed directly by the owner, then verified and enriched against real shopfront/storeroom photos the owner sent (visible cement/paint/pipe brands, roofing sheets, doors, tools, appliances, etc.). This replaced an earlier 6-category list (`hardware-tools`, `sanitary-plumbing`, `electrical`, `motor-parts`, `furniture`, `electronics`) that came from the firm's registration paperwork but didn't match what's actually sold. If the category list changes again: update `categorySlugs`/`CategorySlug` in `src/data/business.ts`, `categoryIcons` in `src/lib/categoryIcons.tsx`, and `categories.<slug>` in **both** `src/dictionaries/en.ts` and `ne.ts` (TypeScript's `Record<CategorySlug, CategoryCopy>` will refuse to compile until both dictionaries have an entry for every slug, so it's hard to miss one). Also update `public/llms.txt`'s page list to match.
 
 1. **`src/dictionaries/en.ts` / `ne.ts` → `categories.<slug>`** — `shortDescription`, `longDescription`, and `highlights` describe each category with real stock: `building-materials` names cement types (OPC/PPC/PSC), steel rod, paint brands, roofing sheets, wire mesh, marble/tiles/granite, and ready-made doors; `sanitary-plumbing` names toilets/wash basins and PVC/CPVC/HDPE pipes; `machinery-tools` names power tools, cutting/grinding machines, and water pumps; `appliances` names air coolers and kitchen chimneys. Update further as more specific items (brands, sizes) get confirmed.
-2. If you get an actual itemized catalog (with individual products, prices, maybe photos), that's a bigger structural change than editing the dictionaries — it means adding a real product data model (e.g. `src/data/products.ts` with `{ slug, categorySlug, name, description, price?, image? }`) and a per-product page under `products/[category]/[product]/`. That's out of scope for the current placeholder system; ask for it explicitly when the catalog is ready, since it also changes `sitemap.ts` (many more URLs) and the category view layout.
+2. If you get pricing or photos per item, that's a bigger structural change than the itemized list below — it means extending the product data model with `price?`/`image?` and probably a per-product page under `products/[category]/[product]/`. Ask for it explicitly when that's ready, since it also changes `sitemap.ts` (many more URLs) and the category view layout.
+
+## Itemized stock lists (per category)
+
+The owner has supplied a real item-level stock list (hardware/furniture fittings, wire mesh, plain sheets, machinery, and steel section items), transcribed as-is in [`docs/product-inventory.md`](./product-inventory.md) and structured into `src/data/products.ts` as `productGroups: Partial<Record<CategorySlug, ProductGroup[]>>` (each group has a `heading` and `items: { name, variant? }[]`).
+
+`CategoryView.tsx` (the page a Products-page category card links to) looks up `productGroups[slug]` and, if present, renders it via `ProductItemList.tsx` — a native `<details>`/`<summary>` accordion per group (no client JS needed). If a slug has no entry in `productGroups`, the page falls back to the existing `comingSoonNote` copy, same as before this list existed.
+
+Only `building-materials` (4 groups: Hardware & Fittings, Wire Mesh, Plain Sheets, Steel Sections) and `machinery-tools` (1 group: Machinery) have real itemized data — nothing in the owner's list maps to `sanitary-plumbing` or `appliances` yet. Item names are kept as-is (untranslated) in both locales since they're trade names/romanized terms, not marketing copy — `ProductItemList` reads directly from `products.ts`, not the dictionaries.
+
+To add items to a category (or add a new group), edit `productGroups` in `src/data/products.ts` directly — no dictionary or type changes needed unless a brand-new `CategorySlug` is introduced.
 
 ## Logo and photos
 
@@ -35,7 +45,26 @@ The header/footer still render a text wordmark ("Building Care" / "Enterprises")
 
 `opengraph-image.tsx` still generates a simple "BC" placeholder graphic via [`next/og`'s `ImageResponse`](https://nextjs.org/docs/app/api-reference/functions/image-response) — consider replacing it with a designed image (photo of the shopfront, or logo + product photography) once available, since social shares convert much better with a real photo than a generated color block.
 
-There are currently no product or shopfront photos wired into the site itself — the owner did send shopfront/storeroom photos (used to verify and enrich the category copy above, see the "Adding real products" section), but they aren't embedded as `<img>`s anywhere yet. Category cards and the hero remain icon/color-based rather than photo-based. Wiring the actual photos in (hero background, category card images, an About-page gallery) is a reasonable next step — they'd need to be added under `public/` and referenced from the relevant view, with alt text and appropriate sizing for a static export (no `next/image` optimizer, see [seo.md](./seo.md#images)).
+There are currently no product or shopfront photos wired into the site itself — the owner did send shopfront/storeroom photos (used to verify and enrich the category copy above, see the "Adding real products" section), but they aren't embedded as `<img>`s anywhere yet. Category cards and the hero remain icon/color-based rather than photo-based. Wiring the actual photos in (hero background, category card images, an About-page gallery) is a reasonable next step — they'd need to be added under `public/` and referenced from the relevant view, with alt text and appropriate sizing for a static export (`next/image` works here since `images.unoptimized: true` is set — see [seo.md](./seo.md#images) — but still needs real `width`/`height`).
+
+## Dealer/brand banners (e.g. "Authorized Dealer of Shivam Cement")
+
+The homepage (`HomeView.tsx`) has a full-width banner right below the header (before the hero section, `min-h-[20vh]`) showing the shop's authorized-dealer status for a supplier brand — currently Shivam Cement, added 2026-08-26 and revised same day from a slim icon-only strip to this full banner per explicit owner feedback ("not approved... big banner... add full image not only the logo"). Two image assets live in `public/brands/`:
+
+- `shivam-cement-logo.png` — the full logo (icon + "SHIVAM CEMENT" + "ASALI OPC CEMENT SINCE 2003"), background removed (was solid green in the source file, see below), trimmed to content bounds. This is what's actually rendered in the banner.
+- `shivam-cement-mark.png` — just the triangle icon, isolated via connected-component flood fill (walk outward from a seed pixel known to be inside the icon, keep only pixels reachable through opaque pixels; a straight rectangular crop clips into the "S" of "SHIVAM" because the wordmark's bounding box overlaps the icon's). Currently unused after the icon-only design was rejected, but kept in case a compact version is wanted again somewhere else (e.g. footer).
+
+**The banner's background must be `bg-[#007e3c]`, not a Tailwind green shade** — `#007e3c` is Shivam Cement's actual brand green, confirmed 2026-08-26 by screenshotting their live site (shivamcement.com.np) and sampling the header pixel color, and it exactly matches the background color removed from their logo file. The logo's wordmark text is baked-in white pixels, meant to sit on this exact green — on a lighter background (e.g. `emerald-50`) or a mismatched dark shade (e.g. Tailwind's `emerald-800`) the white text is illegible or looks off-brand. If this banner (or a future one for another brand) ever looks washed out, check the background color first.
+
+Pattern for adding another brand's banner:
+
+1. Get the brand's official logo image from the owner (not scraped) — same rule as the shop's own logo above.
+2. Remove its background (flood fill from the image border on the near-uniform background color), trim, save as `public/brands/<brand>-logo.png`.
+3. Find the brand's real background/accent color (screenshot their official site and sample a pixel, or reuse the color removed from the logo — they should match) and use that exact hex (`bg-[#rrggbb]`), not a generic Tailwind shade, so the logo's own text/accents stay legible and it reads as authentic rather than approximate.
+4. Add the display text to `dict.home.dealerBadge` in **both** `en.ts` and `ne.ts` (`Dictionary["home"]["dealerBadge"]` in `types.ts`) — brand names are kept as their own transliteration/spelling in each locale, not translated word-for-word.
+5. Render via `<Image src="/brands/<brand>-logo.png" alt="<brand> — <tagline>" .../>` in `HomeView.tsx`, sized generously (this is a banner, not an icon).
+
+If a second dealer banner is ever added, this should become a small array/loop rather than more copy-pasted markup — and they can't both be `min-h-[20vh]` stacked without eating the whole first screen, so revisit the layout at that point rather than just repeating the block.
 
 ## Copy tone
 

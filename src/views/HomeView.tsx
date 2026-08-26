@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { CheckCircle2 } from "lucide-react";
 import type { Locale } from "@/lib/site";
@@ -13,6 +14,21 @@ export function HomeView({ locale }: { locale: Locale }) {
 
   return (
     <>
+      <div className="flex min-h-[20vh] items-center bg-[#007e3c]">
+        <Container className="flex flex-col items-center justify-center gap-4 py-8 text-center sm:flex-row sm:gap-8">
+          <Image
+            src="/brands/shivam-cement-logo.png"
+            alt="Shivam Cement — Asali OPC Cement, since 2003"
+            width={1779}
+            height={763}
+            className="h-20 w-auto shrink-0 sm:h-28"
+          />
+          <p className="text-xl font-bold tracking-tight text-white sm:text-3xl">
+            {home.dealerBadge}
+          </p>
+        </Container>
+      </div>
+
       <section className="bg-gradient-to-b from-brand-50 to-white">
         <Container className="grid gap-10 py-16 sm:py-20 lg:grid-cols-2 lg:items-center">
           <div>

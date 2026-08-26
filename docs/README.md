@@ -6,7 +6,8 @@ Docs for the Building Care Enterprises website. Each file covers one concern end
 | --- | --- |
 | [architecture.md](./architecture.md) | Orienting yourself in the codebase, or adding a new page/route. |
 | [i18n.md](./i18n.md) | Touching anything bilingual — dictionaries, the language switcher, adding a page in both languages. |
-| [content-editing.md](./content-editing.md) | Adding real product data, changing NAP (name/address/phone) info, updating hours or map pin. |
+| [content-editing.md](./content-editing.md) | Adding real product data, changing NAP (name/address/phone) info, updating hours or map pin, or editing an itemized category stock list. |
+| [product-inventory.md](./product-inventory.md) | Looking for the raw source of the owner's item-level stock list (the live version is `src/data/products.ts` — see content-editing.md). |
 | [seo.md](./seo.md) | Touching metadata, structured data, sitemap/robots, or setting up Google Search Console. |
 | [design-system.md](./design-system.md) | Changing colors, typography, spacing, or adding a new UI component. |
 | [components.md](./components.md) | Looking for what a shared component does before reusing or modifying it. |

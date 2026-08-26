@@ -4,9 +4,11 @@ import type { Locale } from "@/lib/site";
 import { SITE_URL } from "@/lib/site";
 import { getDictionary } from "@/lib/dictionary";
 import type { CategorySlug } from "@/data/business";
+import { productGroups } from "@/data/products";
 import { localeHref } from "@/lib/paths";
 import { Container } from "@/components/Container";
 import { JsonLd } from "@/components/JsonLd";
+import { ProductItemList } from "@/components/ProductItemList";
 import { breadcrumbJsonLd } from "@/lib/structuredData";
 import { categoryIcons } from "@/lib/categoryIcons";
 
@@ -14,6 +16,7 @@ export function CategoryView({ locale, slug }: { locale: Locale; slug: CategoryS
   const dict = getDictionary(locale);
   const copy = dict.categories[slug];
   const Icon = categoryIcons[slug];
+  const groups = productGroups[slug];
 
   const breadcrumb = breadcrumbJsonLd([
     { name: dict.nav.home, url: `${SITE_URL}${localeHref(locale, "/")}` },
@@ -57,7 +60,7 @@ export function CategoryView({ locale, slug }: { locale: Locale; slug: CategoryS
         <Container className="grid gap-10 lg:grid-cols-3">
           <div className="lg:col-span-2">
             <h2 className="text-xl font-semibold text-slate-900">
-              {dict.common.allCategories}
+              {dict.products.highlightsHeading}
             </h2>
             <ul className="mt-4 space-y-3">
               {copy.highlights.map((item) => (
@@ -67,7 +70,18 @@ export function CategoryView({ locale, slug }: { locale: Locale; slug: CategoryS
                 </li>
               ))}
             </ul>
-            <p className="mt-6 text-sm text-slate-500">{dict.products.comingSoonNote}</p>
+
+            {groups ? (
+              <div className="mt-10">
+                <h2 className="text-xl font-semibold text-slate-900">
+                  {dict.products.itemsHeading}
+                </h2>
+                <p className="mt-2 text-sm text-slate-500">{dict.products.itemsNote}</p>
+                <ProductItemList groups={groups} />
+              </div>
+            ) : (
+              <p className="mt-6 text-sm text-slate-500">{dict.products.comingSoonNote}</p>
+            )}
           </div>
 
           <aside className="rounded-2xl border border-brand-100 bg-brand-50 p-6">

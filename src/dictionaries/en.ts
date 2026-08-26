@@ -40,6 +40,7 @@ export const en = {
     rightsReserved: "All rights reserved.",
   },
   home: {
+    dealerBadge: "Authorized Dealer of Shivam Cement",
     heroEyebrow: "Hetauda, Makawanpur",
     heroTitle: "Everything Your Building Needs, Under One Roof",
     heroSubtitle:
@@ -113,6 +114,10 @@ export const en = {
       "We supply four major categories of building and household goods. A full catalogue with prices is coming soon — call or WhatsApp us in the meantime for stock and pricing.",
     viewCategory: "View Category",
     comingSoonNote: "Full product catalogue coming soon",
+    highlightsHeading: "Category Highlights",
+    itemsHeading: "Items We Stock",
+    itemsNote:
+      "Sizes and variants shown where available. Call or WhatsApp to confirm current stock and pricing for any item.",
   },
   categories: {
     "building-materials": {

@@ -30,6 +30,7 @@ export interface Dictionary {
     rightsReserved: string;
   };
   home: {
+    dealerBadge: string;
     heroEyebrow: string;
     heroTitle: string;
     heroSubtitle: string;
@@ -61,6 +62,9 @@ export interface Dictionary {
     intro: string;
     viewCategory: string;
     comingSoonNote: string;
+    highlightsHeading: string;
+    itemsHeading: string;
+    itemsNote: string;
   };
   categories: Record<CategorySlug, CategoryCopy>;
   contact: {
