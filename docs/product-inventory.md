@@ -1,7 +1,11 @@
 # Product inventory (raw source)
 
-Real item-level stock list supplied by the owner on 2026-08-26 (source: `items_list.txt`).
-This is now wired into the site as structured data at
+Real item-level stock lists supplied by the owner:
+
+- 2026-08-26 (source: `items_list.txt`) — hardware/fittings, wire mesh, plain sheets, machinery, steel sections.
+- 2026-08-30 (source: `paint-product-list-by-brand.txt`) — paint & coatings, by brand.
+
+Both are now wired into the site as structured data at
 [`src/data/products.ts`](../src/data/products.ts) (`productGroups`), rendered
 on each category's page (`ProductItemList.tsx`) — see
 [content-editing.md](./content-editing.md#itemized-stock-lists-per-category).
@@ -9,11 +13,12 @@ This file stays as the raw transcription for reference/diffing against future
 updates from the owner; edit `products.ts` directly to change what's live on
 the site.
 
-Mapping to the site's 4 categories (see `CategorySlug` in
+Mapping to the site's 5 categories (see `CategorySlug` in
 [`src/data/business.ts`](../src/data/business.ts)): "Furniture Item" and
 "Section Item" below are hardware/steel stock and belong under
 `building-materials`; "Jali" and "Plainsheets" also belong under
-`building-materials`; "Machinery" belongs under `machinery-tools`.
+`building-materials`; "Machinery" belongs under `machinery-tools`; the
+"Paint & Coating" brand list belongs under its own `paints` category.
 
 ## Furniture Item (hardware)
 
@@ -103,3 +108,144 @@ Mapping to the site's 4 categories (see `CategorySlug` in
 | Soap (Steel Wash) | |
 | Welding Rod Steel | |
 | Welding Rod (MS) | 2.5mm / 3.2mm / 4mm |
+
+## Paint & Coating (by brand)
+
+Source note preserved as-is from the owner's sheets: brand grouping follows the
+name printed on each product label (e.g. "Lukol", "Brolac", "Jensolin", "Silk"
+are distinct product-line names even if some may share a parent company).
+Quantities reflect the pack-size columns visible in the source photos; some
+columns were cut off at the right edge and may not be complete for every
+product. Footnote on the originals: "All white and P0 bases are available in
+1/4/10/20 liters; W1 & P1 bases available in 0.9/3.6/9/16/20 liters."
+
+### Luxol / Lukol
+
+| Item | Variant |
+|---|---|
+| Luxol Satin Enamel | 0.45/0.5 Ltr, 0.9/1 Ltr |
+| Luxol Gold Enamel | 0.9/1 Ltr |
+| Luxol Xtra Enamel | 0.45/0.5 Ltr, 0.9/1 Ltr |
+| Lukol Premium Hi-Gloss Enamel (Super White, Golden Yellow, Bus Green, P.O. Red, Ox. Blue) | 20 Ltr |
+| Lukol Premium Hi-Gloss Enamel (All Other Colours) | 20 Ltr |
+| TP Lukol Cool Exterior Emulsion (White & All Shade) | 20 Ltr |
+| TP Lukol Exterior Emulsion (White & All Shade) | 20 Ltr |
+| Lukol Clear Varnish | 20 Ltr |
+
+### Brolac
+
+| Item | Variant |
+|---|---|
+| Brolac Hi-Gloss Enamel (GR-1: Spkl White) | 500mL, 1 Ltr, 4 Ltr |
+| Brolac Hi-Gloss Enamel (GR-2: Gd.Yellow, PO Red, Signal Red, Deep Orange) | 500mL, 1 Ltr, 4 Ltr |
+| Brolac Hi-Gloss Enamel (GR-3: Black, Truck Brown, Leaf Brown, Gd.Brown, Smoke Grey, Phiroza, Bus Green) | 500mL, 1 Ltr, 4 Ltr |
+| Brolac Hi-Gloss Enamel (GR-4: All Others) | 500mL, 1 Ltr, 4 Ltr |
+| Brolac - LB (Magenta/Purple) | 4 Ltr |
+
+### Jensolin
+
+| Item | Variant |
+|---|---|
+| Jensolin Furniture Enamel (Grey/Dark Grey/Light Grey) | (sizes not listed) |
+| Jensolin Superior Redoxide Primer | 500mL, 1 Ltr, 4 Ltr |
+| Jensolin White Wood Primer | 500mL, 1 Ltr, 4 Ltr |
+
+### BP
+
+| Item | Variant |
+|---|---|
+| BP Cement Primer WT | 1 Ltr, 4 Ltr, 10 Ltr |
+
+### Weathercoat
+
+| Item | Variant |
+|---|---|
+| Weathercoat Long Life 12 | 0.9/1 Ltr, 3.6/4 Ltr |
+| Weathercoat All Guard Flexo | 0.9/1 Ltr, 3.6/4 Ltr |
+| Weathercoat All Guard | 0.9/1 Ltr, 3.6/4 Ltr |
+| Weathercoat Champ | 0.9/1 Ltr, 3.6/4 Ltr |
+| Weathercoat Smooth | 0.9/1 Ltr, 3.6/4 Ltr |
+| Weathercoat Exterior Primer | 1 Ltr, 4 Ltr, 10 Ltr |
+
+### Silk
+
+| Item | Variant |
+|---|---|
+| Silk Breathe Easy | 0.9/1 Ltr, 3.6/4 Ltr, 9/10 Ltr |
+| Silk Glamor Glow | 0.9/1 Ltr, 3.6/4 Ltr, 9/10 Ltr |
+| Silk Glamor | 0.9/1 Ltr, 3.6/4 Ltr, 9/10 Ltr |
+| Silk Luxury | 0.9/1 Ltr, 3.6/4 Ltr, 9/10 Ltr |
+| Silk Glamor Metallic (Gold) | 900mL/1 Ltr |
+| Silk Glamor Metallic (Silver) | 900mL/1 Ltr |
+| Silk Illusions Metallica (Gold) | 250mL |
+| Silk Illusions Metallica (Silver) | 250mL |
+| Silk Illusions Non-Metallic | 900mL/1 Ltr |
+
+### Easy Clean
+
+| Item | Variant |
+|---|---|
+| Easy Clean Fresh | 0.9/1 Ltr, 3.6/4 Ltr, 9/10 Ltr |
+| Easy Clean | 0.9/1 Ltr, 3.6/4 Ltr, 9/10 Ltr |
+
+### Rangoli
+
+| Item | Variant |
+|---|---|
+| Rangoli One Coat | 0.9/1 Ltr, 3.6/4 Ltr |
+
+### Walmasta
+
+| Item | Variant |
+|---|---|
+| Walmasta | 0.9/1 Ltr, 3.6/4 Ltr |
+
+### Bison
+
+| Item | Variant |
+|---|---|
+| Bison Wall Putty | 40 Kg |
+| Bison Acrylic Emulsion | 0.9/1 Ltr, 3.6/4 Ltr |
+
+### REWA
+
+| Item | Variant |
+|---|---|
+| REWA Exterior Emulsion | 4 Ltr, 10 Ltr, 20 Ltr |
+| REWA Interior Emulsion | 4 Ltr, 10 Ltr, 20 Ltr |
+| REWA Distemper (White & All Shade) | 10 Ltr, 20 Ltr |
+| REWA Cement Primer Interior | 4 Ltr, 10 Ltr, 20 Ltr |
+| REWA Cement Primer Exterior | 4 Ltr, 10 Ltr, 20 Ltr |
+| REWA Enamel (White, G.Yellow, Bus Green, PO Red) | 1 Ltr, 4 Ltr |
+| REWA Enamel - All Other Shade | 1 Ltr, 4 Ltr |
+| REWA Wood Primer Pink | 1 Ltr, 4 Ltr |
+| REWA Wood Primer White | 1 Ltr, 4 Ltr |
+| REWA Metal Primer | 1 Ltr, 4 Ltr |
+
+### Tata
+
+| Item | Variant |
+|---|---|
+| Toyal Royal Luxury Interior Emulsion (White & All Shade) | 20 Ltr |
+| Tata Altee Exterior Emulsion (White & All Shade) | 20 Ltr |
+| Tata Toyota Exterior Emulsion (White & All Shade) | 20 Ltr |
+| Tata Anamol Interior Emulsion (White & All Shade) | 20 Ltr |
+| Tata Cement Primer Exterior | 10 Ltr, 20 Ltr |
+| Tata Cement Primer Interior | 10 Ltr, 20 Ltr |
+| Tata Acrylic Distemper (White & All Shade) | 20 Ltr |
+| Tata Synthetic Enamel (Super White, Golden Yellow, Bus Green, P.O. Red, Ox. Blue) | 20 Ltr |
+| Tata Synthetic Enamel (All Other Colours) | 20 Ltr |
+| Tata Wood Primer White | 4 Ltr, 20 Ltr |
+| Tata Wood Primer Pink | 4 Ltr, 20 Ltr |
+| Tata Metal Primer Red Oxide | 4 Ltr, 20 Ltr |
+| Tata Aluminium Paint | 20 Ltr |
+| Tata Black Japan (Bitumen Paint) | 20 Ltr |
+| Tata Gold 24 Carat | 20 Ltr |
+
+### Aagaman
+
+| Item | Variant |
+|---|---|
+| Aagaman Cement Primer Exterior | 10 Ltr, 20 Ltr |
+| Aagaman Cement Primer Interior | 10 Ltr, 20 Ltr |
+| Aagaman Acrylic Distemper (White & All Shade) | 20 Ltr |

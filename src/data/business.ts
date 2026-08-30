@@ -70,6 +70,7 @@ export const business = {
 
 export type CategorySlug =
   | "building-materials"
+  | "paints"
   | "sanitary-plumbing"
   | "machinery-tools"
   | "appliances";
@@ -82,9 +83,15 @@ export type CategorySlug =
  * brands, paint brands, roofing sheets, pipes, doors, tools, appliances,
  * etc.) — not the broader category list on the original firm-registration
  * paperwork. See docs/content-editing.md for the prior 6-category list this
- * replaced. */
+ * replaced.
+ *
+ * `paints` was split out of `building-materials` on 2026-08-30 once the
+ * owner supplied a full brand-by-brand paint & coatings stock list — see
+ * docs/product-inventory.md and the `paints` entry in
+ * src/data/products.ts. */
 export const categorySlugs: CategorySlug[] = [
   "building-materials",
+  "paints",
   "sanitary-plumbing",
   "machinery-tools",
   "appliances",

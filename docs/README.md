@@ -15,4 +15,4 @@ Docs for the Building Care Enterprises website. Each file covers one concern end
 
 ## Project summary
 
-Static (fully pre-rendered, no Node server) Next.js site for **Building Care Enterprises**, a building-materials/sanitary-plumbing/machinery-tools/appliances trading shop in Hetauda, Makawanpur, Nepal. Bilingual: English at the unprefixed root, Nepali under `/ne`. Deployed to GitHub Pages at `buildingcare.com.np`. Product catalog is not final yet — see [content-editing.md](./content-editing.md) for how the placeholder category system is meant to be replaced.
+Static (fully pre-rendered, no Node server) Next.js site for **Building Care Enterprises**, a building-materials/paints/sanitary-plumbing/machinery-tools/appliances trading shop in Hetauda, Makawanpur, Nepal. Bilingual: English at the unprefixed root, Nepali under `/ne`. Deployed to GitHub Pages at `buildingcare.com.np`. Product catalog is not final yet — see [content-editing.md](./content-editing.md) for how the placeholder category system is meant to be replaced.
