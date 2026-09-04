@@ -6,6 +6,7 @@ import { JsonLd } from "./JsonLd";
 import { Header } from "./Header";
 import { Footer } from "./Footer";
 import { ChatBubble } from "./ChatBubble";
+import { LoadingScreen } from "./LoadingScreen";
 
 /** Shared page chrome (header, footer, structured data, WhatsApp/Messenger
  * chat bubbles) used inside the <body> of both locale root layouts. See
@@ -15,6 +16,7 @@ export function SiteBody({ locale, children }: { locale: Locale; children: React
 
   return (
     <>
+      <LoadingScreen />
       <JsonLd data={localBusinessJsonLd(locale, dict)} />
       <Header locale={locale} dict={dict} />
       <main className="flex-1">{children}</main>
