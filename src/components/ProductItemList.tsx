@@ -9,7 +9,7 @@ export function ProductItemList({ groups }: { groups: ProductGroup[] }) {
         <details
           key={group.heading}
           open={groups.length === 1 || i === 0}
-          className="group overflow-hidden rounded-xl border border-slate-200"
+          className="group rounded-xl border border-slate-200"
         >
           <summary className="flex cursor-pointer list-none items-center justify-between gap-2 px-4 py-3 text-sm font-semibold text-slate-900 [&::-webkit-details-marker]:hidden">
             <span>{group.heading}</span>
@@ -25,13 +25,24 @@ export function ProductItemList({ groups }: { groups: ProductGroup[] }) {
             {group.items.map((item) => (
               <li key={item.name} className="flex items-center gap-3 py-2 text-sm">
                 {item.image && (
-                  <Image
-                    src={item.image}
-                    alt=""
-                    width={40}
-                    height={40}
-                    className="h-10 w-10 shrink-0 rounded-lg border border-slate-200 object-cover"
-                  />
+                  <div className="group/thumb relative shrink-0">
+                    <Image
+                      src={item.image}
+                      alt=""
+                      width={40}
+                      height={40}
+                      className="h-10 w-10 rounded-lg border border-slate-200 object-cover"
+                    />
+                    <div className="pointer-events-none absolute left-full top-1/2 z-20 ml-2 hidden w-[248px] -translate-y-1/2 rounded-lg border border-slate-200 bg-white p-1 shadow-lg group-hover/thumb:block">
+                      <Image
+                        src={item.image}
+                        alt=""
+                        width={240}
+                        height={240}
+                        className="h-[240px] w-[240px] rounded object-cover"
+                      />
+                    </div>
+                  </div>
                 )}
                 <div className="flex flex-1 flex-wrap items-baseline justify-between gap-x-4 gap-y-0.5">
                   <span className="font-medium text-slate-800">{item.name}</span>
