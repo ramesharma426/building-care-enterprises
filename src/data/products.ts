@@ -5,11 +5,13 @@ export type ProductGroup = { heading: string; items: ProductVariantItem[] };
 
 /**
  * Real item-level stock lists supplied by the owner — hardware/steel/
- * machinery list on 2026-08-26, paint & coatings brand list on 2026-08-30 —
- * grouped and mapped to a CategorySlug. See docs/product-inventory.md for
- * the raw source this was transcribed from. Only categories with a
- * confirmed itemized list are keyed here: `sanitary-plumbing` and
- * `appliances` still rely on the category-level copy in the dictionaries
+ * machinery list on 2026-08-26, paint & coatings brand list on 2026-08-30,
+ * Om Shivam (Laxmi Technoplast) CPVC/uPVC pipe & fittings list on
+ * 2026-09-08 — grouped and mapped to a CategorySlug. See
+ * docs/product-inventory.md for the raw source this was transcribed from
+ * (names and available sizes/types only — the site never shows pricing).
+ * Only categories with a confirmed itemized list are keyed here:
+ * `appliances` still relies on the category-level copy in the dictionaries
  * alone (CategoryView falls back to that when a slug has no entry here).
  */
 export const productGroups: Partial<Record<CategorySlug, ProductGroup[]>> = {
@@ -251,6 +253,146 @@ export const productGroups: Partial<Record<CategorySlug, ProductGroup[]>> = {
         { name: "Aagaman Cement Primer Exterior", variant: "10 Ltr, 20 Ltr" },
         { name: "Aagaman Cement Primer Interior", variant: "10 Ltr, 20 Ltr" },
         { name: "Aagaman Acrylic Distemper (White & All Shade)", variant: "20 Ltr" },
+      ],
+    },
+  ],
+  "sanitary-plumbing": [
+    {
+      heading: "CPVC Pipes",
+      items: [
+        { name: "SDR-11 CPVC Pipe", variant: "1/2\", 3/4\", 1\", 1-1/4\", 1-1/2\", 2\"" },
+        { name: "SDR-13.5 CPVC Pipe", variant: "1/2\", 3/4\", 1\", 1-1/4\", 1-1/2\", 2\"" },
+      ],
+    },
+    {
+      heading: "CPVC Fittings",
+      items: [
+        { name: "Coupler / Socket", variant: "1/2\", 3/4\", 1\", 1-1/4\", 1-1/2\", 2\"" },
+        {
+          name: "Elbow 90°",
+          variant: "1/2\", 3/4\", 1\", 1-1/4\", 1-1/2\", 2\", 1\"x1/2\", 1\"x3/4\"",
+        },
+        { name: "Equal Tee", variant: "1/2\", 3/4\", 1\", 1-1/4\", 1-1/2\", 2\"" },
+        { name: "Elbow 45°", variant: "1/2\", 3/4\", 1\", 1-1/4\", 1-1/2\", 2\"" },
+        { name: "End Cap", variant: "1/2\", 3/4\", 1\", 1-1/4\", 1-1/2\", 2\"" },
+        {
+          name: "Female Thread Tee (Brass)",
+          variant: "1/2\", 3/4\", 1\", 3/4\"x1/2\", 1\"x1/2\", 1\"x3/4\"",
+        },
+        { name: "Female Thread Adapter", variant: "1/2\", 3/4\", 1\", 1-1/4\", 1-1/2\", 2\"" },
+        {
+          name: "Male Thread Adapter (Brass, Hexa)",
+          variant: "3/4\", 1\", 3/4\"x1/2\", 1\"x1/2\"",
+        },
+        {
+          name: "Female Thread Adapter (Brass, Hexa)",
+          variant: "3/4\", 1\", 3/4\"x1/2\", 1\"x1/2\"",
+        },
+        {
+          name: "Male Thread Adaptor",
+          variant: "1/2\", 3/4\", 1\", 1-1/4\", 1-1/2\", 2\", 3/4\"x1/2\", 1\"x1/2\"",
+        },
+        {
+          name: "Female Thread Elbow (Brass)",
+          variant: "1/2\", 3/4\", 1\", 3/4\"x1/2\", 1\"x1/2\"",
+        },
+        {
+          name: "Reducing Bush",
+          variant:
+            "1\"x3/4\", 1-1/4\"x3/4\", 1-1/4\"x1\", 1-1/2\"x3/4\", 1-1/2\"x1\", 1-1/2\"x1-1/4\", 2\"x1\", 2\"x1-1/4\", 2\"x1-1/2\"",
+        },
+        {
+          name: "Reducing Tee",
+          variant:
+            "3/4\"x1/2\", 1\"x3/4\", 1-1/4\"x3/4\", 1-1/4\"x1\", 1-1/2\"x3/4\", 1-1/2\"x1\", 1-1/2\"x1-1/4\", 2\"x3/4\", 2\"x1\", 2\"x1-1/4\", 2\"x1-1/2\"",
+        },
+        {
+          name: "Reducing Coupler / Socket",
+          variant:
+            "3/4\"x1/2\", 1\"x1/2\", 1\"x3/4\", 1-1/4\"x3/4\", 1-1/4\"x1\", 1-1/2\"x3/4\", 1-1/2\"x1\", 1-1/2\"x1-1/4\", 2\"x1\", 2\"x1-1/4\", 2\"x1-1/2\"",
+        },
+        { name: "Union", variant: "1/2\", 3/4\", 1\", 1-1/4\", 1-1/2\", 2\"" },
+        { name: "Tank Connector", variant: "1/2\", 3/4\", 1\", 1-1/4\", 1-1/2\", 2\"" },
+        {
+          name: "Male Thread Adapter (Brass)",
+          variant: "1/2\", 3/4\", 1\", 1-1/4\", 1-1/2\", 2\", 3/4\"x1/2\", 1\"x1/2\"",
+        },
+        {
+          name: "Female Coupling (Brass)",
+          variant: "1/2\", 3/4\", 1\", 1-1/4\", 1-1/2\", 2\", 3/4\"x1/2\", 1\"x1/2\"",
+        },
+        { name: "Ball Valve", variant: "1/2\", 3/4\", 1\", 1-1/4\", 1-1/2\", 2\"" },
+        { name: "Metal Pipe Clamp", variant: "1/2\", 3/4\", 1\", 1-1/4\", 1-1/2\", 2\"" },
+        { name: "Cross Tee", variant: "1/2\", 3/4\", 1\"" },
+        { name: "Step Over Bend", variant: "1/2\", 3/4\", 1\"" },
+        { name: "End Plug Threaded", variant: "1/2\"" },
+        { name: "Wall Mixture Adapter", variant: "Double, Triple" },
+        { name: "Solvent (CPVC)", variant: "59 mL, 118 mL, 237 mL" },
+      ],
+    },
+    {
+      heading: "uPVC Pipes",
+      items: [
+        { name: "Pressure Pipe (NS Standard), 2.5 kgf/cm²", variant: "110mm, 160mm" },
+        { name: "Pressure Pipe (NS Standard), 4 kgf/cm²", variant: "75mm, 110mm, 160mm" },
+        {
+          name: "Pressure Pipe (NS Standard), 6 kgf/cm²",
+          variant: "50mm, 75mm, 110mm, 160mm",
+        },
+        {
+          name: "Underground Drainage Plain Socket SN4, 3m length",
+          variant: "75mm, 110mm, 160mm",
+        },
+        {
+          name: "Underground Drainage Plain Socket SN4, 6m length",
+          variant: "75mm, 110mm, 160mm",
+        },
+        {
+          name: "Non-NS Pressure Pipe, 4 kgf/cm², 3m length",
+          variant: "50mm, 75mm, 110mm, 160mm",
+        },
+        { name: "Non-NS Pressure Pipe, 4 kgf/cm², 6m length", variant: "75mm, 110mm, 160mm" },
+      ],
+    },
+    {
+      heading: "uPVC Fittings",
+      items: [
+        { name: "Coupler", variant: "1-1/2\" (50mm), 2-1/2\" (75mm), 4\" (110mm), 6\" (160mm)" },
+        {
+          name: "Bend 87.5°",
+          variant: "1-1/2\" (50mm), 2-1/2\" (75mm), 4\" (110mm), 6\" (160mm)",
+        },
+        { name: "Bend 87.5° with Door", variant: "2-1/2\" (75mm), 4\" (110mm)" },
+        { name: "Bend 45°", variant: "1-1/2\" (50mm), 2-1/2\" (75mm), 4\" (110mm), 6\" (160mm)" },
+        {
+          name: "Single Tee",
+          variant: "1-1/2\" (50mm), 2-1/2\" (75mm), 4\" (110mm), 6\" (160mm)",
+        },
+        { name: "Cleaning Pipe", variant: "2-1/2\" (75mm), 4\" (110mm)" },
+        { name: "Pipe Clip", variant: "1-1/2\" (50mm), 2-1/2\" (75mm), 4\" (110mm), 6\" (160mm)" },
+        {
+          name: "Reducer",
+          variant: "2-1/2\"x1-1/2\" (75x50mm), 4\"x2-1/2\" (110x75mm), 6\"x4\" (160x110mm)",
+        },
+        { name: "P' Trap", variant: "4\" (110mm)" },
+        { name: "Vent Cowl", variant: "2-1/2\" (75mm), 4\" (110mm)" },
+        { name: "Single Tee with Door", variant: "1-1/2\" (50mm), 2-1/2\" (75mm)" },
+        { name: "Double Tee", variant: "2-1/2\" (75mm), 4\" (110mm)" },
+        { name: "Double Tee with Door", variant: "2-1/2\" (75mm), 4\" (110mm)" },
+        {
+          name: "Single 'Y'",
+          variant: "1-1/2\" (50mm), 2-1/2\" (75mm), 4\" (110mm), 6\" (160mm)",
+        },
+        { name: "Single 'Y' with Door", variant: "1-1/2\" (50mm), 2-1/2\" (75mm), 4\" (110mm)" },
+        { name: "End Cap", variant: "1-1/2\" (50mm), 2-1/2\" (75mm), 4\" (110mm)" },
+        { name: "Square Jali", variant: "4\" (110mm)" },
+        { name: "Reducing Tee", variant: "4\"x2-1/2\" (110x75mm), 6\"x4\" (160x110mm)" },
+        { name: "Reducing Tee with Door", variant: "4\"x2-1/2\" (110x75mm)" },
+        { name: "Multi Floor Trap", variant: "4\"x2-1/2\" (110x75mm)" },
+        { name: "Nahani Trap", variant: "4\"x2-1/2\" (110x75mm)" },
+        { name: "Socket Plug", variant: "1-1/2\" (50mm), 2-1/2\" (75mm), 4\" (110mm)" },
+        { name: "Construction Tagaro", variant: "16\"" },
+        { name: "Adhesive Solvent", variant: "100 mL, 200 mL, 500 mL, 1000 mL" },
       ],
     },
   ],

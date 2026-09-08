@@ -4,6 +4,7 @@ Real item-level stock lists supplied by the owner:
 
 - 2026-08-26 (source: `items_list.txt`) — hardware/fittings, wire mesh, plain sheets, machinery, steel sections.
 - 2026-08-30 (source: `paint-product-list-by-brand.txt`) — paint & coatings, by brand.
+- 2026-09-08 (source: `om_shivam_price_list.txt`) — Om Shivam (Laxmi Technoplast) CPVC/uPVC pipes & fittings.
 
 Both are now wired into the site as structured data at
 [`src/data/products.ts`](../src/data/products.ts) (`productGroups`), rendered
@@ -18,7 +19,8 @@ Mapping to the site's 5 categories (see `CategorySlug` in
 "Section Item" below are hardware/steel stock and belong under
 `building-materials`; "Jali" and "Plainsheets" also belong under
 `building-materials`; "Machinery" belongs under `machinery-tools`; the
-"Paint & Coating" brand list belongs under its own `paints` category.
+"Paint & Coating" brand list belongs under its own `paints` category; the
+Om Shivam CPVC/uPVC list belongs under `sanitary-plumbing`.
 
 ## Furniture Item (hardware)
 
@@ -249,3 +251,91 @@ product. Footnote on the originals: "All white and P0 bases are available in
 | Aagaman Cement Primer Exterior | 10 Ltr, 20 Ltr |
 | Aagaman Cement Primer Interior | 10 Ltr, 20 Ltr |
 | Aagaman Acrylic Distemper (White & All Shade) | 20 Ltr |
+
+## Om Shivam CPVC/uPVC Pipes & Fittings (by type)
+
+Source: `om_shivam_price_list.txt`, manufacturer Laxmi Technoplast Ltd.
+(Hetauda Industrial Estate). Only item names and available sizes were
+transcribed from the source sheet — no other detail from it is repeated
+here.
+
+### CPVC Pipes
+
+| Item | Variant |
+|---|---|
+| SDR-11 CPVC Pipe | 1/2", 3/4", 1", 1-1/4", 1-1/2", 2" |
+| SDR-13.5 CPVC Pipe | 1/2", 3/4", 1", 1-1/4", 1-1/2", 2" |
+
+### CPVC Fittings
+
+| Item | Variant |
+|---|---|
+| Coupler / Socket | 1/2", 3/4", 1", 1-1/4", 1-1/2", 2" |
+| Elbow 90° | 1/2", 3/4", 1", 1-1/4", 1-1/2", 2", 1"x1/2", 1"x3/4" |
+| Equal Tee | 1/2", 3/4", 1", 1-1/4", 1-1/2", 2" |
+| Elbow 45° | 1/2", 3/4", 1", 1-1/4", 1-1/2", 2" |
+| End Cap | 1/2", 3/4", 1", 1-1/4", 1-1/2", 2" |
+| Female Thread Tee (Brass) | 1/2", 3/4", 1", 3/4"x1/2", 1"x1/2", 1"x3/4" |
+| Female Thread Adapter | 1/2", 3/4", 1", 1-1/4", 1-1/2", 2" |
+| Male Thread Adapter (Brass, Hexa) | 3/4", 1", 3/4"x1/2", 1"x1/2" |
+| Female Thread Adapter (Brass, Hexa) | 3/4", 1", 3/4"x1/2", 1"x1/2" |
+| Male Thread Adaptor | 1/2", 3/4", 1", 1-1/4", 1-1/2", 2", 3/4"x1/2", 1"x1/2" |
+| Female Thread Elbow (Brass) | 1/2", 3/4", 1", 3/4"x1/2", 1"x1/2" |
+| Reducing Bush | 1"x3/4", 1-1/4"x3/4", 1-1/4"x1", 1-1/2"x3/4", 1-1/2"x1", 1-1/2"x1-1/4", 2"x1", 2"x1-1/4", 2"x1-1/2" |
+| Reducing Tee | 3/4"x1/2", 1"x3/4", 1-1/4"x3/4", 1-1/4"x1", 1-1/2"x3/4", 1-1/2"x1", 1-1/2"x1-1/4", 2"x3/4", 2"x1", 2"x1-1/4", 2"x1-1/2" |
+| Reducing Coupler / Socket | 3/4"x1/2", 1"x1/2", 1"x3/4", 1-1/4"x3/4", 1-1/4"x1", 1-1/2"x3/4", 1-1/2"x1", 1-1/2"x1-1/4", 2"x1", 2"x1-1/4", 2"x1-1/2" |
+| Union | 1/2", 3/4", 1", 1-1/4", 1-1/2", 2" |
+| Tank Connector | 1/2", 3/4", 1", 1-1/4", 1-1/2", 2" |
+| Male Thread Adapter (Brass) | 1/2", 3/4", 1", 1-1/4", 1-1/2", 2", 3/4"x1/2", 1"x1/2" |
+| Female Coupling (Brass) | 1/2", 3/4", 1", 1-1/4", 1-1/2", 2", 3/4"x1/2", 1"x1/2" |
+| Ball Valve | 1/2", 3/4", 1", 1-1/4", 1-1/2", 2" |
+| Metal Pipe Clamp | 1/2", 3/4", 1", 1-1/4", 1-1/2", 2" |
+| Cross Tee | 1/2", 3/4", 1" |
+| Step Over Bend | 1/2", 3/4", 1" |
+| End Plug Threaded | 1/2" |
+| Wall Mixture Adapter | Double, Triple |
+| Solvent (CPVC) | 59 mL, 118 mL, 237 mL |
+
+### uPVC Pipes
+
+| Item | Variant |
+|---|---|
+| Pressure Pipe (NS Standard), 2.5 kgf/cm² | 110mm, 160mm |
+| Pressure Pipe (NS Standard), 4 kgf/cm² | 75mm, 110mm, 160mm |
+| Pressure Pipe (NS Standard), 6 kgf/cm² | 50mm, 75mm, 110mm, 160mm |
+| Underground Drainage Plain Socket SN4, 3m length | 75mm, 110mm, 160mm |
+| Underground Drainage Plain Socket SN4, 6m length | 75mm, 110mm, 160mm |
+| Non-NS Pressure Pipe, 4 kgf/cm², 3m length | 50mm, 75mm, 110mm, 160mm |
+| Non-NS Pressure Pipe, 4 kgf/cm², 6m length | 75mm, 110mm, 160mm |
+
+### uPVC Fittings
+
+| Item | Variant |
+|---|---|
+| Coupler | 1-1/2" (50mm), 2-1/2" (75mm), 4" (110mm), 6" (160mm) |
+| Bend 87.5° | 1-1/2" (50mm), 2-1/2" (75mm), 4" (110mm), 6" (160mm) |
+| Bend 87.5° with Door | 2-1/2" (75mm), 4" (110mm) |
+| Bend 45° | 1-1/2" (50mm), 2-1/2" (75mm), 4" (110mm), 6" (160mm) |
+| Single Tee | 1-1/2" (50mm), 2-1/2" (75mm), 4" (110mm), 6" (160mm) |
+| Cleaning Pipe | 2-1/2" (75mm), 4" (110mm) |
+| Pipe Clip | 1-1/2" (50mm), 2-1/2" (75mm), 4" (110mm), 6" (160mm) |
+| Reducer | 2-1/2"x1-1/2" (75x50mm), 4"x2-1/2" (110x75mm), 6"x4" (160x110mm) |
+| P' Trap | 4" (110mm) |
+| Vent Cowl | 2-1/2" (75mm), 4" (110mm) |
+| Single Tee with Door | 1-1/2" (50mm), 2-1/2" (75mm) |
+| Double Tee | 2-1/2" (75mm), 4" (110mm) |
+| Double Tee with Door | 2-1/2" (75mm), 4" (110mm) |
+| Single 'Y' | 1-1/2" (50mm), 2-1/2" (75mm), 4" (110mm), 6" (160mm) |
+| Single 'Y' with Door | 1-1/2" (50mm), 2-1/2" (75mm), 4" (110mm) |
+| End Cap | 1-1/2" (50mm), 2-1/2" (75mm), 4" (110mm) |
+| Square Jali | 4" (110mm) |
+| Reducing Tee | 4"x2-1/2" (110x75mm), 6"x4" (160x110mm) |
+| Reducing Tee with Door | 4"x2-1/2" (110x75mm) |
+| Multi Floor Trap | 4"x2-1/2" (110x75mm) |
+| Nahani Trap | 4"x2-1/2" (110x75mm) |
+| Socket Plug | 1-1/2" (50mm), 2-1/2" (75mm), 4" (110mm) |
+| Construction Tagaro | 16" |
+| Adhesive Solvent | 100 mL, 200 mL, 500 mL, 1000 mL |
+
+Note: `-` in the source indicates the value was blank, illegible, or not
+applicable in the original scanned document.
