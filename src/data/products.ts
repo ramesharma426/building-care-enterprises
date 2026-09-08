@@ -1,6 +1,6 @@
 import type { CategorySlug } from "./business";
 
-export type ProductVariantItem = { name: string; variant?: string };
+export type ProductVariantItem = { name: string; variant?: string; image?: string };
 export type ProductGroup = { heading: string; items: ProductVariantItem[] };
 
 /**
@@ -260,139 +260,314 @@ export const productGroups: Partial<Record<CategorySlug, ProductGroup[]>> = {
     {
       heading: "CPVC Pipes",
       items: [
-        { name: "SDR-11 CPVC Pipe", variant: "1/2\", 3/4\", 1\", 1-1/4\", 1-1/2\", 2\"" },
-        { name: "SDR-13.5 CPVC Pipe", variant: "1/2\", 3/4\", 1\", 1-1/4\", 1-1/2\", 2\"" },
+        {
+          name: "SDR-11 CPVC Pipe",
+          variant: "1/2\", 3/4\", 1\", 1-1/4\", 1-1/2\", 2\"",
+          image: "/products/sanitary-plumbing/cpvc-pipe.jpg",
+        },
+        {
+          name: "SDR-13.5 CPVC Pipe",
+          variant: "1/2\", 3/4\", 1\", 1-1/4\", 1-1/2\", 2\"",
+          image: "/products/sanitary-plumbing/cpvc-pipe.jpg",
+        },
       ],
     },
     {
       heading: "CPVC Fittings",
       items: [
-        { name: "Coupler / Socket", variant: "1/2\", 3/4\", 1\", 1-1/4\", 1-1/2\", 2\"" },
+        {
+          name: "Coupler / Socket",
+          variant: "1/2\", 3/4\", 1\", 1-1/4\", 1-1/2\", 2\"",
+          image: "/products/sanitary-plumbing/coupler-socket.jpg",
+        },
         {
           name: "Elbow 90°",
           variant: "1/2\", 3/4\", 1\", 1-1/4\", 1-1/2\", 2\", 1\"x1/2\", 1\"x3/4\"",
+          image: "/products/sanitary-plumbing/elbow-90.jpg",
         },
-        { name: "Equal Tee", variant: "1/2\", 3/4\", 1\", 1-1/4\", 1-1/2\", 2\"" },
-        { name: "Elbow 45°", variant: "1/2\", 3/4\", 1\", 1-1/4\", 1-1/2\", 2\"" },
-        { name: "End Cap", variant: "1/2\", 3/4\", 1\", 1-1/4\", 1-1/2\", 2\"" },
+        {
+          name: "Equal Tee",
+          variant: "1/2\", 3/4\", 1\", 1-1/4\", 1-1/2\", 2\"",
+          image: "/products/sanitary-plumbing/equal-tee.jpg",
+        },
+        {
+          name: "Elbow 45°",
+          variant: "1/2\", 3/4\", 1\", 1-1/4\", 1-1/2\", 2\"",
+          image: "/products/sanitary-plumbing/elbow-45.jpg",
+        },
+        {
+          name: "End Cap",
+          variant: "1/2\", 3/4\", 1\", 1-1/4\", 1-1/2\", 2\"",
+          image: "/products/sanitary-plumbing/end-cap-cpvc.jpg",
+        },
         {
           name: "Female Thread Tee (Brass)",
           variant: "1/2\", 3/4\", 1\", 3/4\"x1/2\", 1\"x1/2\", 1\"x3/4\"",
+          image: "/products/sanitary-plumbing/female-thread-tee-brass.jpg",
         },
-        { name: "Female Thread Adapter", variant: "1/2\", 3/4\", 1\", 1-1/4\", 1-1/2\", 2\"" },
+        {
+          name: "Female Thread Adapter",
+          variant: "1/2\", 3/4\", 1\", 1-1/4\", 1-1/2\", 2\"",
+          image: "/products/sanitary-plumbing/female-thread-adapter.jpg",
+        },
         {
           name: "Male Thread Adapter (Brass, Hexa)",
           variant: "3/4\", 1\", 3/4\"x1/2\", 1\"x1/2\"",
+          image: "/products/sanitary-plumbing/male-thread-adapter-brass-hexa.jpg",
         },
         {
           name: "Female Thread Adapter (Brass, Hexa)",
           variant: "3/4\", 1\", 3/4\"x1/2\", 1\"x1/2\"",
+          image: "/products/sanitary-plumbing/female-thread-adapter-brass-hexa.jpg",
         },
         {
           name: "Male Thread Adaptor",
           variant: "1/2\", 3/4\", 1\", 1-1/4\", 1-1/2\", 2\", 3/4\"x1/2\", 1\"x1/2\"",
+          image: "/products/sanitary-plumbing/male-thread-adaptor.jpg",
         },
         {
           name: "Female Thread Elbow (Brass)",
           variant: "1/2\", 3/4\", 1\", 3/4\"x1/2\", 1\"x1/2\"",
+          image: "/products/sanitary-plumbing/female-thread-elbow-brass.jpg",
         },
         {
           name: "Reducing Bush",
           variant:
             "1\"x3/4\", 1-1/4\"x3/4\", 1-1/4\"x1\", 1-1/2\"x3/4\", 1-1/2\"x1\", 1-1/2\"x1-1/4\", 2\"x1\", 2\"x1-1/4\", 2\"x1-1/2\"",
+          image: "/products/sanitary-plumbing/reducing-bush.jpg",
         },
         {
           name: "Reducing Tee",
           variant:
             "3/4\"x1/2\", 1\"x3/4\", 1-1/4\"x3/4\", 1-1/4\"x1\", 1-1/2\"x3/4\", 1-1/2\"x1\", 1-1/2\"x1-1/4\", 2\"x3/4\", 2\"x1\", 2\"x1-1/4\", 2\"x1-1/2\"",
+          image: "/products/sanitary-plumbing/reducing-tee-cpvc.jpg",
         },
         {
           name: "Reducing Coupler / Socket",
           variant:
             "3/4\"x1/2\", 1\"x1/2\", 1\"x3/4\", 1-1/4\"x3/4\", 1-1/4\"x1\", 1-1/2\"x3/4\", 1-1/2\"x1\", 1-1/2\"x1-1/4\", 2\"x1\", 2\"x1-1/4\", 2\"x1-1/2\"",
+          image: "/products/sanitary-plumbing/reducing-coupler-socket.jpg",
         },
-        { name: "Union", variant: "1/2\", 3/4\", 1\", 1-1/4\", 1-1/2\", 2\"" },
-        { name: "Tank Connector", variant: "1/2\", 3/4\", 1\", 1-1/4\", 1-1/2\", 2\"" },
+        {
+          name: "Union",
+          variant: "1/2\", 3/4\", 1\", 1-1/4\", 1-1/2\", 2\"",
+          image: "/products/sanitary-plumbing/union.jpg",
+        },
+        {
+          name: "Tank Connector",
+          variant: "1/2\", 3/4\", 1\", 1-1/4\", 1-1/2\", 2\"",
+          image: "/products/sanitary-plumbing/tank-connector.jpg",
+        },
         {
           name: "Male Thread Adapter (Brass)",
           variant: "1/2\", 3/4\", 1\", 1-1/4\", 1-1/2\", 2\", 3/4\"x1/2\", 1\"x1/2\"",
+          image: "/products/sanitary-plumbing/male-thread-adapter-brass.jpg",
         },
         {
           name: "Female Coupling (Brass)",
           variant: "1/2\", 3/4\", 1\", 1-1/4\", 1-1/2\", 2\", 3/4\"x1/2\", 1\"x1/2\"",
+          image: "/products/sanitary-plumbing/female-coupling-brass.jpg",
         },
-        { name: "Ball Valve", variant: "1/2\", 3/4\", 1\", 1-1/4\", 1-1/2\", 2\"" },
-        { name: "Metal Pipe Clamp", variant: "1/2\", 3/4\", 1\", 1-1/4\", 1-1/2\", 2\"" },
-        { name: "Cross Tee", variant: "1/2\", 3/4\", 1\"" },
-        { name: "Step Over Bend", variant: "1/2\", 3/4\", 1\"" },
-        { name: "End Plug Threaded", variant: "1/2\"" },
-        { name: "Wall Mixture Adapter", variant: "Double, Triple" },
-        { name: "Solvent (CPVC)", variant: "59 mL, 118 mL, 237 mL" },
+        {
+          name: "Ball Valve",
+          variant: "1/2\", 3/4\", 1\", 1-1/4\", 1-1/2\", 2\"",
+          image: "/products/sanitary-plumbing/ball-valve.jpg",
+        },
+        {
+          name: "Metal Pipe Clamp",
+          variant: "1/2\", 3/4\", 1\", 1-1/4\", 1-1/2\", 2\"",
+          image: "/products/sanitary-plumbing/metal-pipe-clamp.jpg",
+        },
+        {
+          name: "Cross Tee",
+          variant: "1/2\", 3/4\", 1\"",
+          image: "/products/sanitary-plumbing/cross-tee.jpg",
+        },
+        {
+          name: "Step Over Bend",
+          variant: "1/2\", 3/4\", 1\"",
+          image: "/products/sanitary-plumbing/step-over-bend.jpg",
+        },
+        {
+          name: "End Plug Threaded",
+          variant: "1/2\"",
+          image: "/products/sanitary-plumbing/end-plug-threaded.jpg",
+        },
+        {
+          name: "Wall Mixture Adapter",
+          variant: "Double, Triple",
+          image: "/products/sanitary-plumbing/wall-mixture-adapter.jpg",
+        },
+        {
+          name: "Solvent (CPVC)",
+          variant: "59 mL, 118 mL, 237 mL",
+          image: "/products/sanitary-plumbing/solvent-cpvc.jpg",
+        },
       ],
     },
     {
       heading: "uPVC Pipes",
       items: [
-        { name: "Pressure Pipe (NS Standard), 2.5 kgf/cm²", variant: "110mm, 160mm" },
-        { name: "Pressure Pipe (NS Standard), 4 kgf/cm²", variant: "75mm, 110mm, 160mm" },
+        {
+          name: "Pressure Pipe (NS Standard), 2.5 kgf/cm²",
+          variant: "110mm, 160mm",
+          image: "/products/sanitary-plumbing/upvc-pipe.jpg",
+        },
+        {
+          name: "Pressure Pipe (NS Standard), 4 kgf/cm²",
+          variant: "75mm, 110mm, 160mm",
+          image: "/products/sanitary-plumbing/upvc-pipe.jpg",
+        },
         {
           name: "Pressure Pipe (NS Standard), 6 kgf/cm²",
           variant: "50mm, 75mm, 110mm, 160mm",
+          image: "/products/sanitary-plumbing/upvc-pipe.jpg",
         },
         {
           name: "Underground Drainage Plain Socket SN4, 3m length",
           variant: "75mm, 110mm, 160mm",
+          image: "/products/sanitary-plumbing/upvc-pipe.jpg",
         },
         {
           name: "Underground Drainage Plain Socket SN4, 6m length",
           variant: "75mm, 110mm, 160mm",
+          image: "/products/sanitary-plumbing/upvc-pipe.jpg",
         },
         {
           name: "Non-NS Pressure Pipe, 4 kgf/cm², 3m length",
           variant: "50mm, 75mm, 110mm, 160mm",
+          image: "/products/sanitary-plumbing/upvc-pipe.jpg",
         },
-        { name: "Non-NS Pressure Pipe, 4 kgf/cm², 6m length", variant: "75mm, 110mm, 160mm" },
+        {
+          name: "Non-NS Pressure Pipe, 4 kgf/cm², 6m length",
+          variant: "75mm, 110mm, 160mm",
+          image: "/products/sanitary-plumbing/upvc-pipe.jpg",
+        },
       ],
     },
     {
       heading: "uPVC Fittings",
       items: [
-        { name: "Coupler", variant: "1-1/2\" (50mm), 2-1/2\" (75mm), 4\" (110mm), 6\" (160mm)" },
+        {
+          name: "Coupler",
+          variant: "1-1/2\" (50mm), 2-1/2\" (75mm), 4\" (110mm), 6\" (160mm)",
+          image: "/products/sanitary-plumbing/coupler-upvc.jpg",
+        },
         {
           name: "Bend 87.5°",
           variant: "1-1/2\" (50mm), 2-1/2\" (75mm), 4\" (110mm), 6\" (160mm)",
+          image: "/products/sanitary-plumbing/bend-87-5.jpg",
         },
-        { name: "Bend 87.5° with Door", variant: "2-1/2\" (75mm), 4\" (110mm)" },
-        { name: "Bend 45°", variant: "1-1/2\" (50mm), 2-1/2\" (75mm), 4\" (110mm), 6\" (160mm)" },
+        {
+          name: "Bend 87.5° with Door",
+          variant: "2-1/2\" (75mm), 4\" (110mm)",
+          image: "/products/sanitary-plumbing/bend-87-5-with-door.jpg",
+        },
+        {
+          name: "Bend 45°",
+          variant: "1-1/2\" (50mm), 2-1/2\" (75mm), 4\" (110mm), 6\" (160mm)",
+          image: "/products/sanitary-plumbing/bend-45.jpg",
+        },
         {
           name: "Single Tee",
           variant: "1-1/2\" (50mm), 2-1/2\" (75mm), 4\" (110mm), 6\" (160mm)",
+          image: "/products/sanitary-plumbing/single-tee.jpg",
         },
-        { name: "Cleaning Pipe", variant: "2-1/2\" (75mm), 4\" (110mm)" },
-        { name: "Pipe Clip", variant: "1-1/2\" (50mm), 2-1/2\" (75mm), 4\" (110mm), 6\" (160mm)" },
+        {
+          name: "Cleaning Pipe",
+          variant: "2-1/2\" (75mm), 4\" (110mm)",
+          image: "/products/sanitary-plumbing/cleaning-pipe.jpg",
+        },
+        {
+          name: "Pipe Clip",
+          variant: "1-1/2\" (50mm), 2-1/2\" (75mm), 4\" (110mm), 6\" (160mm)",
+          image: "/products/sanitary-plumbing/pipe-clip.jpg",
+        },
         {
           name: "Reducer",
           variant: "2-1/2\"x1-1/2\" (75x50mm), 4\"x2-1/2\" (110x75mm), 6\"x4\" (160x110mm)",
+          image: "/products/sanitary-plumbing/reducer.jpg",
         },
-        { name: "P' Trap", variant: "4\" (110mm)" },
-        { name: "Vent Cowl", variant: "2-1/2\" (75mm), 4\" (110mm)" },
-        { name: "Single Tee with Door", variant: "1-1/2\" (50mm), 2-1/2\" (75mm)" },
-        { name: "Double Tee", variant: "2-1/2\" (75mm), 4\" (110mm)" },
-        { name: "Double Tee with Door", variant: "2-1/2\" (75mm), 4\" (110mm)" },
+        {
+          name: "P' Trap",
+          variant: "4\" (110mm)",
+          image: "/products/sanitary-plumbing/p-trap.jpg",
+        },
+        {
+          name: "Vent Cowl",
+          variant: "2-1/2\" (75mm), 4\" (110mm)",
+          image: "/products/sanitary-plumbing/vent-cowl.jpg",
+        },
+        {
+          name: "Single Tee with Door",
+          variant: "1-1/2\" (50mm), 2-1/2\" (75mm)",
+          image: "/products/sanitary-plumbing/single-tee-with-door.jpg",
+        },
+        {
+          name: "Double Tee",
+          variant: "2-1/2\" (75mm), 4\" (110mm)",
+          image: "/products/sanitary-plumbing/double-tee.jpg",
+        },
+        {
+          name: "Double Tee with Door",
+          variant: "2-1/2\" (75mm), 4\" (110mm)",
+          image: "/products/sanitary-plumbing/double-tee-with-door.jpg",
+        },
         {
           name: "Single 'Y'",
           variant: "1-1/2\" (50mm), 2-1/2\" (75mm), 4\" (110mm), 6\" (160mm)",
+          image: "/products/sanitary-plumbing/single-y.jpg",
         },
-        { name: "Single 'Y' with Door", variant: "1-1/2\" (50mm), 2-1/2\" (75mm), 4\" (110mm)" },
-        { name: "End Cap", variant: "1-1/2\" (50mm), 2-1/2\" (75mm), 4\" (110mm)" },
-        { name: "Square Jali", variant: "4\" (110mm)" },
-        { name: "Reducing Tee", variant: "4\"x2-1/2\" (110x75mm), 6\"x4\" (160x110mm)" },
-        { name: "Reducing Tee with Door", variant: "4\"x2-1/2\" (110x75mm)" },
-        { name: "Multi Floor Trap", variant: "4\"x2-1/2\" (110x75mm)" },
-        { name: "Nahani Trap", variant: "4\"x2-1/2\" (110x75mm)" },
-        { name: "Socket Plug", variant: "1-1/2\" (50mm), 2-1/2\" (75mm), 4\" (110mm)" },
-        { name: "Construction Tagaro", variant: "16\"" },
-        { name: "Adhesive Solvent", variant: "100 mL, 200 mL, 500 mL, 1000 mL" },
+        {
+          name: "Single 'Y' with Door",
+          variant: "1-1/2\" (50mm), 2-1/2\" (75mm), 4\" (110mm)",
+          image: "/products/sanitary-plumbing/single-y-with-door.jpg",
+        },
+        {
+          name: "End Cap",
+          variant: "1-1/2\" (50mm), 2-1/2\" (75mm), 4\" (110mm)",
+          image: "/products/sanitary-plumbing/end-cap-upvc.jpg",
+        },
+        {
+          name: "Square Jali",
+          variant: "4\" (110mm)",
+          image: "/products/sanitary-plumbing/square-jali.jpg",
+        },
+        {
+          name: "Reducing Tee",
+          variant: "4\"x2-1/2\" (110x75mm), 6\"x4\" (160x110mm)",
+          image: "/products/sanitary-plumbing/reducing-tee-upvc.jpg",
+        },
+        {
+          name: "Reducing Tee with Door",
+          variant: "4\"x2-1/2\" (110x75mm)",
+          image: "/products/sanitary-plumbing/reducing-tee-with-door.jpg",
+        },
+        {
+          name: "Multi Floor Trap",
+          variant: "4\"x2-1/2\" (110x75mm)",
+          image: "/products/sanitary-plumbing/multi-floor-trap.jpg",
+        },
+        {
+          name: "Nahani Trap",
+          variant: "4\"x2-1/2\" (110x75mm)",
+          image: "/products/sanitary-plumbing/nahani-trap.jpg",
+        },
+        {
+          name: "Socket Plug",
+          variant: "1-1/2\" (50mm), 2-1/2\" (75mm), 4\" (110mm)",
+          image: "/products/sanitary-plumbing/socket-plug.jpg",
+        },
+        {
+          name: "Construction Tagaro",
+          variant: "16\"",
+          image: "/products/sanitary-plumbing/construction-tagaro.jpg",
+        },
+        {
+          name: "Adhesive Solvent",
+          variant: "100 mL, 200 mL, 500 mL, 1000 mL",
+          image: "/products/sanitary-plumbing/adhesive-solvent.jpg",
+        },
       ],
     },
   ],

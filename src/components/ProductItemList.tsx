@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ChevronDown } from "lucide-react";
 import type { ProductGroup } from "@/data/products";
 
@@ -22,12 +23,20 @@ export function ProductItemList({ groups }: { groups: ProductGroup[] }) {
           </summary>
           <ul className="divide-y divide-slate-100 border-t border-slate-100 px-4">
             {group.items.map((item) => (
-              <li
-                key={item.name}
-                className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-0.5 py-2 text-sm"
-              >
-                <span className="font-medium text-slate-800">{item.name}</span>
-                {item.variant && <span className="text-slate-500">{item.variant}</span>}
+              <li key={item.name} className="flex items-center gap-3 py-2 text-sm">
+                {item.image && (
+                  <Image
+                    src={item.image}
+                    alt=""
+                    width={40}
+                    height={40}
+                    className="h-10 w-10 shrink-0 rounded-lg border border-slate-200 object-cover"
+                  />
+                )}
+                <div className="flex flex-1 flex-wrap items-baseline justify-between gap-x-4 gap-y-0.5">
+                  <span className="font-medium text-slate-800">{item.name}</span>
+                  {item.variant && <span className="text-slate-500">{item.variant}</span>}
+                </div>
               </li>
             ))}
           </ul>
