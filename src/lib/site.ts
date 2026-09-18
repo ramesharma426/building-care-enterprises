@@ -8,7 +8,7 @@ export const SITE_NAME = "Building Care Enterprises";
 /** Paste the Google Search Console HTML-tag verification code here (just
  * the `content` value, not the whole <meta> tag) once you've added the
  * property for buildingcare.com.np. See docs/seo.md#google-search-console. */
-export const GOOGLE_SITE_VERIFICATION = "";
+export const GOOGLE_SITE_VERIFICATION = "-w44GyizxIEEmdOokqmsmPJTz9U9vBYRZ5Q3Ua9uF1E";
 
 export const LOCALES = ["en", "ne"] as const;
 export type Locale = (typeof LOCALES)[number];
