@@ -5,6 +5,7 @@ Real item-level stock lists supplied by the owner:
 - 2026-08-26 (source: `items_list.txt`) — hardware/fittings, wire mesh, plain sheets, machinery, steel sections.
 - 2026-08-30 (source: `paint-product-list-by-brand.txt`) — paint & coatings, by brand.
 - 2026-09-08 (source: `om_shivam_price_list.txt`) — Om Shivam (Laxmi Technoplast) CPVC/uPVC pipes & fittings.
+- 2026-09-23 (source: `PVC PRICE LIST 2082-83 - new copy.pdf`, `CPVC 2082-83 final.pdf`) — official vector PDFs of the same Om Shivam CPVC/uPVC price lists above; used only to re-crop the 52 product thumbnails at much higher quality (see [content-editing.md](./content-editing.md#itemized-stock-lists-per-category)) — no item/size data changed.
 
 Both are now wired into the site as structured data at
 [`src/data/products.ts`](../src/data/products.ts) (`productGroups`), rendered
